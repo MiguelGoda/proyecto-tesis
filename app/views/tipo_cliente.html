@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="uft-8">
+		<title>Distribuidora de agua "Aqua Nuestra"</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+
+	</head>
+	<body ng-controller="Tipo_ClientesController">
+			<h1> Distribuidora de agua "Aqua Nuestra"</h1>
+		<div class="wrapper">
+		<div class="contact-item" ng-repeat="tipo_cliente in tipo_clientes | orderBy: 'nombre'">
+				<div class="cod_tipo_cliente"> Codigo Tipo Cliente: {{tipo_cliente.cod_tipo_cliente}}</div>
+				<div class="nombre_tipo_cliente"> Nombre Tipo Cliente: {{tipo_cliente.nombre_tipo_cliente}}</div>
+				<div class="descripcion_tipo_cliente"> Descripcion: {{tipo_cliente.descripcion_tipo_cliente}}</div>
+				<span class="descuento"> Descuento:{{tipo_cliente.descuento}}</span>
+		</div>
+		</div>
+		<br/>
+		<center><button ng-click="ShowForm()" ng-hide="formVisibility"> Anadir Cliente </button> </center>
+		<div ng-show="formVisibility" class="wrapper">
+			<h2>Anadir un Tipo Cliente</h2>
+			Codigo Tipo Cliente:<input type="text" ng-model="nuevotipo_Cliente.cod_tipo_cliente"></input>
+			Nombre Tipo Cliente:: <input type="text" ng-model="nuevotipo_Cliente.nombre_tipo_cliente"></input>
+			Descripcion: <input type="text" ng-model="nuevotipo_Cliente.descripcion_tipo_cliente"></input>
+			Descuento: <input type="text" ng-model="nuevotipo_Cliente.descuento"></input>
+			<button ng-click="Save()">Guardar</button>
+		</div>
+
+
+	<script src= "angular.min.js" type="text/javascript"></script>
+	<script src= "scriptstipo_cliente.js" type="text/javascript"></script>
+
+	</body>
+</html>

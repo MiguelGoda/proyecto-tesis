@@ -1,0 +1,29 @@
+CACHE MANIFEST
+
+# aqui colocamos los archivos necesarios para que el programa se ejecute offline
+CACHE:
+# estilos
+styles/main.css
+styles/styles.css
+lib/bootstrap.min.css
+lib/bootstrap-theme.min.css
+
+
+#ibrerias 
+lib/socket.io.js
+lib/jquery.min.js
+lib/angular.min.js
+lib/bootstrap.min.js
+lib/angular-route.min.js
+lib/sortable.min.js
+
+#proyecto 
+scripts/app.js
+scripts/controllers/about.js
+scripts/controllers/main.js
+scripts/controllers/scriptsclientes.js
+scripts/controllers/scriptstipo_cliente.js
+scripts/controllers/scriptsusuarios.js
+scripts/controllers/scriptszonas.js
+index.html
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="uft-8">
+		<title>Distribuidora de agua "Aqua Nuestra"</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+
+	</head>
+	<body ng-controller="ClientesController">
+			<h1> Distribuidora de agua "Aqua Nuestra"</h1>
+			<center><button ng-click="ShowForm()" ng-hide="formVisibility"> Anadir Cliente </button> </center>
+		<div ng-show="formVisibility" class="wrapper">
+			<h2>Anadir un Cliente</h2>
+			Codigo Cliente:<input type="text" ng-model="nuevoCliente.cod_cliente"></input>
+			Codigo Zona: <input type="text" ng-model="nuevoCliente.cod_zona"></input>
+			Tipo Cliente:<input type="text" ng-model="nuevoCliente.cod_tipo_cliente"></input>
+			Nombres:<input type="text" ng-model="nuevoCliente.nombres"></input>
+			A. Paterno:<input type="text" ng-model="nuevoCliente.ap_paterno"></input>
+			A. Materno: <input type="text" ng-model="nuevoCliente.ap_materno"></input>
+			Direccion:<input type="text" ng-model="nuevoCliente.direccion"></input>
+			Telefono:<input type="text" ng-model="nuevoCliente.telefono"></input>
+			Celular: <input type="text" ng-model="nuevoCliente.celular"></input>
+			CI:<input type="text" ng-model="nuevoCliente.CI"></input>
+			<button ng-click="Save()">Guardar</button>
+		</div>
+<br></br>
+		<div class="wrapper">
+		<div class="contact-item" ng-repeat="cliente in clientes | orderBy: 'nombre'">
+				<div class="cod_cliente"> Codigo Cliente: {{cliente.cod_cliente}}</div>
+				<div class="cod_zona"> Codigo Zona: {{cliente.cod_zona}}</div>
+				<div class="nombres"> Nombres: {{cliente.nombres}}</div>
+				<div class="ap_paterno"> Apellido Parteno: {{cliente.ap_paterno}}</div>
+				<div class="ap_materno"> Apellido Materno: {{cliente.ap_materno}}</div>
+				<div class="direccion"> Direccion:{{cliente.direccion}}</div>
+				<div class="telefono"> Telefono:{{cliente.telefono}}</div>
+				<div class="celular"> Celular:{{cliente.celular}}</div>
+				<div class="C.I."> Cedula:{{cliente.CI}}</div>
+				<span class="cod_tipo_cliente"> Tipo Cliente:{{cliente.cod_tipo_cliente}}</span>
+		</div>
+		</div>
+		<br/>
+		
+
+	<script src= "angular.min.js" type="text/javascript"></script>
+	<script src= "scriptsclientes.js" type="text/javascript"></script>
+
+	</body>
+</html>

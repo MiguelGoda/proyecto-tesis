@@ -1,0 +1,115 @@
+<!doctype html>
+<html manifest="appcache.manifest" ng-app="myApp">
+<!--html ng-app="myApp" class="no-js"-->
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-theme.min.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-controller="ClientesController">
+      <h1> Distribuidora de agua "Aqua Nuestra"</h1>
+      <dr> <center><button ng-click="ShowForm()" class="btn btn-primary" ng-hide="formVisibility"> Anadir Cliente </button> </center></dr>
+    <div class="jumbotron wrapper" ng-show="formVisibility" >
+      <form name="clienteForm" ng-submit="Save()">
+      <h2>Anadir un Cliente</h2>
+      Codigo Cliente:<input type="text" ng-model="nuevoCliente.cod_cliente" class="form-control" required></input> </br>
+      Codigo Zona: <input type="text" ng-model="nuevoCliente.cod_zona" class="form-control" required></input></br>
+      Tipo Cliente:<input type="text" ng-model="nuevoCliente.cod_tipo_cliente" class="form-control" required></input></br>
+      Nombres:<input type="text" ng-model="nuevoCliente.nombres" class="form-control" required></input></br>
+      A. Paterno:<input type="text" ng-model="nuevoCliente.ap_paterno" class="form-control" required></input></br>
+      A. Materno: <input type="text" ng-model="nuevoCliente.ap_materno" class="form-control" required></input></br>
+      Direccion:<input type="text" ng-model="nuevoCliente.direccion" class="form-control" required></input></br>
+      Telefono:<input type="text" ng-model="nuevoCliente.telefono" class="form-control"></input></br>
+      Celular: <input type="text" ng-model="nuevoCliente.celular" class="form-control" required></input></br>
+      CI:<input type="text" ng-model="nuevoCliente.CI" class="form-control" required></input></br>
+      <button type="submit" class="btn btn-primary" ng-disabled="clienteForm.$invalid">Guardar</button>
+      <button ng-click="cancelar()" class="btn btn-danger">Cancelar</button>
+
+    </form>
+    </div>
+
+<br></br>
+
+  
+
+  <!-- Table -->
+  
+    ...
+  
+
+    <div class="panel panel-default jumbotron " ng-hide="formVisibility">
+    <div class="panel-heading">Lista de clientes</div>
+    <table class="table">
+    <tr>
+      <th>Codigo Cliente</th>
+      <th>Codigo Cliente</th>
+      <th>Codigo Cliente</th>
+      <th>Codigo Cliente</th>
+      <th>Codigo Cliente</th>
+      <th>Codigo Cliente</th>
+      <th>Codigo Cliente</th>
+      <th>Codigo Cliente</th>
+      <th>Codigo Cliente</th>
+      <th>Codigo Cliente</th>
+    </tr>
+    <tr class="contact-item" ng-repeat="cliente in clientes | orderBy: 'nombre'">
+        <td class="cod_cliente"> {{cliente.cod_cliente}}</td>
+        <td class="cod_zona"> Codigo Zona: {{cliente.cod_zona}}</td>
+        <td class="nombres"> Nombres: {{cliente.nombres}}</td>
+        <td class="ap_paterno"> Apellido Parteno: {{cliente.ap_paterno}}</td>
+        <td class="ap_materno"> Apellido Materno: {{cliente.ap_materno}}</td>
+        <td class="direccion"> Direccion:{{cliente.direccion}}</td>
+        <td class="telefono"> Telefono:{{cliente.telefono}}</td>
+        <td class="celular"> Celular:{{cliente.celular}}</td>
+        <td class="C.I."> Cedula:{{cliente.CI}}</td>
+        <td class="cod_tipo_cliente"> Tipo Cliente:{{cliente.cod_tipo_cliente}}</td>
+
+    </tr>
+    </table>
+    </div>
+    <br/>
+    
+
+    
+    
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/angular-route.min.js"></script>
+    <script src="lib/sortable.min.js"></script>
+    <script src="lib/socket.io.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/scriptsclientes.js" type="text/javascript"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+
+        <!-- endbuild -->
+</body>
+</html>
